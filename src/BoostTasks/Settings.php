@@ -3,7 +3,7 @@
 namespace BoostTasks;
 
 use Nette\Neon\Neon;
-use Nette\Object;
+use Nette;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\TestHandler;
@@ -16,7 +16,8 @@ use BoostTasks\Migrations;
 use LogicException;
 use RuntimeException;
 
-class Settings extends Object {
+class Settings {
+    use Nette\SmartObject;
     static $settings_types = array(
         'data' => array('type' => 'path', 'default' => 'var/data'),
         'username' => array('type' => 'string'),

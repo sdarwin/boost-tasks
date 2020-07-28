@@ -2,7 +2,7 @@
 
 namespace BoostTasks;
 
-use Nette\Object;
+use Nette\SmartObject;
 use BoostTasks\Settings;
 use BoostTasks\RepoBase;
 use BoostTasks\Log;

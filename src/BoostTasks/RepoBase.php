@@ -5,7 +5,7 @@ namespace BoostTasks;
 use BoostTasks\Log;
 use BoostTasks\Process;
 use BoostTasks\Process_FailedExitCode;
-use Nette\Object;
+use Nette;
 
 /*
  * Copyright 2016 Daniel James <daniel@calamity.org.uk>.
@@ -14,7 +14,8 @@ use Nette\Object;
  * file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
  */
 
-class RepoBase extends Object {
+class RepoBase {
+    use Nette\SmartObject;
     var $path;
 
     function __construct($path) {

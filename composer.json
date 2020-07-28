@@ -11,7 +11,7 @@
     "require": {
         "corneltek/getoptionkit": "*",
         "nette/neon": "*",
-        "nette/utils": "*",
+        "nette/utils": "2.5.4",
         "monolog/monolog": "*"
     },
     "require-dev": {
@@ -25,7 +25,7 @@
     "prefer-stable": true,
     "config": {
         "platform": {
-            "php": "5.3.3"
+            "php": "7.2"
         }
     }
 }

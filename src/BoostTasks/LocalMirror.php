@@ -9,7 +9,7 @@
 
 namespace BoostTasks;
 
-use Nette\Object;
+use Nette;
 use BoostTasks\Settings;
 use BoostTasks\GitHubEventQueue;
 use BoostTasks\RepoBase;
@@ -18,7 +18,8 @@ use BoostTasks\Process;
 use RuntimeException;
 
 /** Maintains a local mirror of the boostorg repos. */
-class LocalMirror extends Object {
+class LocalMirror {
+    use Nette\SmartObject;
     static $mirror_table = 'mirror';
     var $mirror_root;
     var $queue;

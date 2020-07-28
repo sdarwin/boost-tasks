@@ -6,7 +6,7 @@ use PDO;
 use RuntimeException;
 use Exception;
 use Iterator;
-use Nette\Object;
+use Nette;
 use BoostTasks\Log;
 
 // This is an incredibly crude little library for database stuff that I
@@ -87,7 +87,10 @@ class Db_Entity {
 }
 
 // A little bit of extra data about the entity.
-class Db_EntityMetaData extends Object {
+class Db_EntityMetaData {
+
+    use Nette\SmartObject;
+
     var $connection;
     var $table;
     var $is_new;
@@ -99,7 +102,10 @@ class Db_EntityMetaData extends Object {
     }
 }
 
-class Db_TableSchema extends Object {
+class Db_TableSchema {
+
+    use Nette\SmartObject;
+
     var $name;
     var $columns;
 
@@ -112,13 +118,17 @@ class Db_TableSchema extends Object {
 // Used for automatically filled in fields.
 // TODO: Could do a lot better by tracking when a field is set, or perhaps
 //       even by not setting such fields in a new entity.
-class Db_Default extends Object {
+class Db_Default {
+
+    use Nette\SmartObject;
+
     static $instance;
 }
 Db_Default::$instance = new Db_Default();
 
 // All the work is done here.
-class Db_Impl extends Object {
+class Db_Impl {
+    use Nette\SmartObject;
     static $entity_object = 'BoostTasks\\Db_Entity';
     var $pdo_connection;
     var $schema = Array();
