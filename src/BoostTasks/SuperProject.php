@@ -9,7 +9,7 @@
 
 namespace BoostTasks;
 
-use Nette\Object;
+use Nette;
 use BoostTasks\Settings;
 use BoostTasks\GitHubEventQueue;
 use BoostTasks\RepoBase;
@@ -344,7 +344,10 @@ class SuperProject extends Repo {
 /**
  * A submodule.
  */
-class SuperProject_Submodule extends Object {
+class SuperProject_Submodule {
+
+    use Nette\SmartObject;
+
     /** The relative path of the submodule from boost root. */
     var $path;
 

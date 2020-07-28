@@ -7,11 +7,12 @@ use GetOptionKit\OptionParser;
 use GetOptionKit\OptionPrinter\ConsoleOptionPrinter;
 use GetOptionKit\Exception\InvalidOptionException;
 use GetOptionKit\InvalidOptionValue;
-use Nette\Object;
+use Nette;
 
 // Very basic command line options handling thing.
-class CommandLineOptions extends Object
+class CommandLineOptions
 {
+    use Nette\SmartObject;
     var $args;
     var $description;
     var $specs;

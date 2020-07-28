@@ -2,7 +2,7 @@
 
 namespace BoostTasks;
 
-use Nette\Object;
+use Nette;
 use BoostTasks\Settings;
 use BoostTasks\Log;
 use RuntimeException;
@@ -12,7 +12,8 @@ use Iterator;
  * Download github api pages using etags and stuff.
  */
 
-class GitHubCache extends Object {
+class GitHubCache {
+    use Nette\SmartObject;
     static $table_name = 'githubcache';
     var $username;
     var $password;
@@ -123,8 +124,9 @@ class GitHubCache extends Object {
     }
 }
 
-class GitHubCache_Iterator extends Object implements Iterator
+class GitHubCache_Iterator implements Iterator
 {
+    use Nette\SmartObject;
     /** @var GitHubCache */
     private $cache;
     /** @var string */

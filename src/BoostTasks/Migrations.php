@@ -2,13 +2,14 @@
 
 namespace BoostTasks;
 
-use Nette\Object;
+use Nette;
 use Nette\Neon\Neon;
 use BoostTasks\Db;
 use BoostTasks\Log;
 use RuntimeException;
 
-class Migrations extends Object {
+class Migrations {
+    use Nette\SmartObject;
     static $versions = array(
         'Migrations::migration_Initialise',
         'Migrations::migration_Null',

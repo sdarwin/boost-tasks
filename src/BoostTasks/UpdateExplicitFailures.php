@@ -9,7 +9,7 @@
 
 namespace BoostTasks;
 
-use Nette\Object;
+use Nette;
 use BoostTasks\RepoBase;
 use BoostTasks\Repo;
 use BoostTasks\Log;
@@ -18,7 +18,10 @@ use BoostTasks\Process;
 use RuntimeException;
 use SimpleXMLElement;
 
-class UpdateExplicitFailures extends Object {
+class UpdateExplicitFailures {
+
+    use Nette\SmartObject;
+
     var $xml;
     var $libraries;
     var $updated_libraries = array();
@@ -194,7 +197,10 @@ class UpdateExplicitFailures extends Object {
     }
 }
 
-class UpdateExplicitFailures_LibraryMarkup extends Object {
+class UpdateExplicitFailures_LibraryMarkup {
+
+    use Nette\SmartObject;
+
     var $start;
     var $end;
     var $markup;

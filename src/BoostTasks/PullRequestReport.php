@@ -9,11 +9,12 @@
 
 namespace BoostTasks;
 
-use Nette\Object;
+use Nette;
 use BoostTasks\Db;
 use BoostTasks\Settings;
 
-class PullRequestReport extends Object {
+class PullRequestReport {
+    use Nette\SmartObject;
     static function update($all = false) {
         $report = new PullRequestReport;
         $report->fullUpdate();

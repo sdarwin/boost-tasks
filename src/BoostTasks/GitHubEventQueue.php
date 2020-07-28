@@ -9,11 +9,14 @@
 
 namespace BoostTasks;
 
-use Nette\Object;
+use Nette;
 use BoostTasks\Settings;
 use BoostTasks\GitHubEvents;
 
-class GitHubEventQueue extends Object {
+class GitHubEventQueue {
+
+    use Nette\SmartObject;
+
     // Contains details and status of individual queues.
     static $queue_table = 'queue';
 
