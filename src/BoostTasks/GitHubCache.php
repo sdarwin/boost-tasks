@@ -173,7 +173,7 @@ class GitHubCache_Iterator implements Iterator
     }
 
     private function fetchToLine($line_index) {
-        while ($line_index >= count($this->lines) && $this->next_url) {
+        while ($line_index >= count($this->lines ?? []) && $this->next_url) {
             $response = $this->cache->get($this->next_url);
             $response_body = \json_decode(trim($response->body));
             if (!is_array($response_body)) {
