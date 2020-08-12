@@ -1,0 +1,25 @@
+# Path to directory where script stores data
+# (Paths resolve relative to config file)
+data: data
+
+# GitHub login details
+# (remember to restrict read permissions).
+username: test
+password: test
+
+# Path to directory where website stores data
+website-data: /home/www/shared/data
+
+# Set to true to push to github, false when you're testing
+push-to-repo: false
+
+# Branches to update (comment out to disable a branch)
+superproject-branches:
+    develop: develop
+    master: master
+
+# Extra configuration files:
+#config-paths:
+#    - /home/www/shared/branches.neon
+
+website-archives: /home/www/shared/archives/test
