@@ -57,3 +57,7 @@ the script.
 
 The keys in `superproject-branches` specifies the branches in the super
 project to update, the values are the branches to update from.
+
+---
+
+More documentation can be found in the [docs/](docs/) directory.
