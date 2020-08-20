@@ -240,7 +240,7 @@ class DbTest extends TestBase
         Assert::same('something', $x1->value2);
         Assert::same('something', $x1->value3);
         Assert::same('0', $x1->value4);
-        Assert::same('100', $x1->value5);
+        Assert::same('+100', $x1->value5);
         Assert::same('-100', $x1->value6);
         Assert::same('null', $x1->value7);
         Assert::same(null, $x1->value8);

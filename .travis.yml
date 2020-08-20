@@ -2,15 +2,16 @@
 # Distributed under the Boost Software License, Version 1.0. (See accompanying
 # file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 
-dist: precise
+dist: bionic
 language: php
 php:
-    - '5.3'
+    - '7.2'
 
 install:
     - composer install --no-interaction --prefer-source
     - touch config.neon
 
 script:
+    #- ./vendor/bin/tester -c tests/config/php7.2.ini -p php tests
     - ./vendor/bin/tester -p php tests
     - 'find . -name ".git" -prune -o -name "vendor" -prune -o -name "*.php" -print | xargs -n 1 php -l'
