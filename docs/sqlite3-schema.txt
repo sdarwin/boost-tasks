@@ -69,3 +69,45 @@ CREATE TABLE `pull_request_event` (
     `created_on` DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
+
+## Example data
+
+event:  
+
+id|github_id|type|branch|repo|payload|created|sequence_start
+1|17775965397|PushEvent|master|boostorg/boost|{"push_id":7829191514,"size":1,"distinct_size":1,"ref":"refs\/heads\/master","head":"2ba528a0ccb36d430c5b181dc7dfe8d1106b59c2","before":"37faa7fb870277b66ee675d8d3bfb7b3e03380e9","commits":[{"sha":"2ba528a0ccb36d430c5b181dc7dfe8d1106b59c2","author":{"email":"automated@calamity.org.uk","name":"Automated Commit"},"message":"Update multi_index from master","distinct":true,"url":"https:\/\/api.github.com\/repos\/boostorg\/boost\/commits\/2ba528a0ccb36d430c5b181dc7dfe8d1106b59c2"}]}|2021-08-30 19:15:08|
+
+eventstate:  
+
+id|name|start_id|last_id
+1|github-state|17711025509|17777091240
+
+githubcache:  
+
+id|url|next_url|etag|body
+1|https://api.github.com/orgs/boostorg/events|https://api.github.com/organizations/3170529/events?page=2|"744ecf8852fee6bee72b5cccc93ab15b5db144db5ada8257d636eb7455267c1d"|[{"id":"17777091240","type":"IssuesEvent","actor":{"id":11447564,"login":"rerdavies","display_login":"rerdavies","gravatar_id":"","url":"https://api.github.com/users/rerdavies","avatar_url":"https://avatars.githubusercontent.com/u/11447564?"},"repo":{"id":10726510,"name":"boostorg/beast","url":"https://api.github.com/repos/boostorg/beast"},"payload":{"action":"closed","issue":{"url":"https://api.github.com/repos/boostorg/beast/issues/2300","repository_url":"https://api.github.com/repos/boostorg/beast","labels_url":"https://api.github.com/repos/boostorg/beast/issues/2300/labels{/name}","comments_url":"https://api.github.com/repos/boostorg/beast/issues/2300/comments","events_url":"https://api.github.com/repos/boostorg/beast/issues/2300/events","html_url":"https://github.com/boostorg/beast/issues/2300","id":976500574,"node_id":"MDU6SXNzdWU5NzY1MDA1NzQ=","number":2300,"title":"Posted body() not erased between subsequent requests on the same session with string_body ","user":{"login":"rerdavies","id":11447564,"node_id":"MDQ6VXNlcjExNDQ3NTY0","avatar_url":"https://avatars.githubusercontent.com/u/11447564?v=4","gravatar_id":"","url":"https://api.github.com/users/rerdavies","html_url":"https://github.com/rerdavies","followers_url":"https://api.github.com/users/rerdavies/followers","following_url":"https://api.github.com/users/rerdavies/following{/other_user}","gists_url":"https://api.github.com/users/rerdavies/gists{/gist_id}","starred_url":"https://api.github.com/users/rerdavies/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/rerdavies/subscriptions","organizations_url":"https://api.github.com/users/rerdavies/orgs","repos_url":"https://api.github.com/users/rerdavies/repos","events_url":"https://api.github.com/users/rerdavies/events{/privacy}","received_events_url":"https://api.github.com/users/rerdavies/received_events","type":"User","site_admin":false},"labels":[],"state":"closed","locked":false,"assignee":null,"assignees":[],"milestone":null,"comments":2,"created_at":"2021-08-22T23:48:25Z","updated_at":"2021-08-30T20: ...continued...
+
+history:  
+
+mirror:  
+
+id|url|path|dirty|priority
+1|https://github.com/boostorg/safe_numerics.git|/boostorg/safe_numerics.git||0
+2|https://github.com/boostorg/fiber.git|/boostorg/fiber.git||0
+
+pull_request:  
+
+id|repo_full_name|pull_request_number|pull_request_url|pull_request_title|pull_request_created_at|pull_request_updated_at
+11821971|boostorg/locale|2|https://github.com/boostorg/locale/pull/2|Make basic_format moveable|2014-01-23T21:53:45Z|2016-03-06T10:12:09Z
+12729693|boostorg/range|2|https://github.com/boostorg/range/pull/2|move(), move_backwards() algorithms, moved_range, move adaptor addon + copy_backward() test fix|2014-02-20T02:20:43Z|2014-06-16T13:29:22Z
+
+pull_request_event:  
+
+queue:  
+
+id|name|last_github_id|type
+1|mirror|17777091240|
+
+variable: 
+
+
