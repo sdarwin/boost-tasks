@@ -67,3 +67,12 @@ sudo add-apt-repository ppa:git-core/ppa
 sudo apt update
 sudo apt install -y git
 ```
+
+---
+
+More documentation can be found in the [docs/](https://github.com/boostorg/boost-tasks/tree/php7/docs) directory of the php7 branch.
+
+The current branches are -
+- master - the default branch. Uses php5. This is what ought to be running on the wowbagger server now. Includes artifactory updates.
+- php7 - various enhancements to support php7. Parallel development. Contains documentation and example docker images.
+- dnljms2020 - a record of the state of the repo in 2020.
