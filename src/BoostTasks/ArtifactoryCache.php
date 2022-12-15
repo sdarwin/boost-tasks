@@ -426,9 +426,21 @@ class ArtifactoryCache_FileDetails {
         if (!is_dir($tmp_dir)) { mkdir($tmp_dir, 0777, true); }
         $temp_path = tempnam($tmp_dir, "download-");
         try {
-            file_put_contents($temp_path, $download_fh);
+            // file_put_contents($temp_path, $download_fh);
             fclose($download_fh);
-            rename($temp_path, $dst_path);
+            // The code had been designed to use fopen and file_put_contents,
+            // however they are not following redirects.
+            // Switching to use curl instead.
+            system("curl -L -o $temp_path $url", $retval);
+            if ($retval == 0) {
+                rename($temp_path, $dst_path);
+            }
+            else {
+                Log::info("The curl command was \n");
+                Log::info("curl -L -o $temp_path $url \n");
+                Log::info("curl failed with a return value of $retval \n");
+                unlink($temp_path);
+            }
         } catch(Exception $e) {
             if ($download_fh) { fclose($download_fh); }
             unlink($temp_path);
