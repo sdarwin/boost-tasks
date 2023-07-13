@@ -412,22 +412,24 @@ class ArtifactoryCache_FileDetails {
     // Downloads file from $url to local path $dst_path
     // Throws RuntimeException on failure.
     function downloadFile($url, $dst_path) {
-        $download_fh = fopen($url, 'rb', false, $this->cache->stream_context);
 
-        if (!$download_fh) {
-            throw new RuntimeException("Error connecting to {$url}");
-        }
+        // 2023 Remove previous method that did not follow redirects:
+        // $download_fh = fopen($url, 'rb', false, $this->cache->stream_context);
 
-        if (feof($download_fh)) {
-            throw new RuntimeException("Empty download: {$url}");
-        }
+        // if (!$download_fh) {
+        //     throw new RuntimeException("Error connecting to {$url}");
+        // }
+
+        // if (feof($download_fh)) {
+        //     throw new RuntimeException("Empty download: {$url}");
+        // }
 
         $tmp_dir = "{$this->cache->path}/tmp";
         if (!is_dir($tmp_dir)) { mkdir($tmp_dir, 0777, true); }
         $temp_path = tempnam($tmp_dir, "download-");
         try {
             // file_put_contents($temp_path, $download_fh);
-            fclose($download_fh);
+            // fclose($download_fh);
             // The code had been designed to use fopen and file_put_contents,
             // however they are not following redirects.
             // Switching to use curl instead.
